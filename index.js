@@ -11,7 +11,7 @@ console.log(x)
 
 
 //THE GAME CODE
-let answer = prompt("Please enter the number you would like to FizzBuzz up to: ");
+let answer = prompt("Enter an answer: rock, paper or scissors: ");
 const answers = ['rock', 'paper', 'scissors']; //computer's options
 
 // Function to get a random answer
