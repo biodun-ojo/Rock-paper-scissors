@@ -51,3 +51,5 @@ function playround() {
 }
 
 playround()
+
+//gotta make a loop for 5 rounds and also needs to add a score board
