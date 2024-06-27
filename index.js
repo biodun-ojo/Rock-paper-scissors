@@ -1,13 +1,11 @@
 //to convert sring to number use "parseInt"
 //how to select a particular element
-//dood = [10, 11, 12]
-//console.log(dood[1])
 
-//console.log('hello world')
-
-//let x = Math.random()
-
-//console.log(x)
+dood = [10, 11, 12]
+console.log(dood[1])
+console.log('hello world')
+let x = Math.random()
+console.log(x)
 
 
 //THE GAME CODE
