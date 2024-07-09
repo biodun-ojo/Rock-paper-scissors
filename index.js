@@ -11,26 +11,7 @@ let computerscore = 0
 //gotta make a loop for 5 rounds and also needs to add a score board
 function playgame () {
     for (let i = 0; i < 5; i++) {
-        function answer() {
-            if (rock.addEventListener("click", function () {
-                answer = 'rock'
-            })) {
-                return 'rock'
-            } else if (paper.addEventListener("click", function () {
-                answer = 'paper'
-            })){
-                return 'paper'
-            } else if (scissors.addEventListener("click", function () {
-                answer = 'scissors'
-            })) {
-                return 'scissors'
-            }
-
-        }
-
-        const zanswer = answer();
-        console.log(`human answer is ${zanswer}`)
-
+        let answer = prompt("Enter an answer: rock, paper or scissors: ");//input
         const answers = ['rock', 'paper', 'scissors'];
 
         function computerAnswer() {
@@ -44,13 +25,19 @@ function playgame () {
         console.log(`computer anwer is ${computerchoice}`);
 
         function HumanAnswer() {
-
+            if (answer.toLowerCase() === 'rock') {
+                return 'rock'
+            } else if (answer.toLowerCase() === 'paper') {
+                return 'paper'
+            } else if (answer.toLowerCase() === 'scissors') {
+                return 'scissors'
+            }    
         }
 
         const humanchoice = HumanAnswer()
         console.log(`human answer is ${humanchoice}`)
 
-        function playround(humanchoice, computerchoice) {
+        function playround() {
             if (computerchoice === humanchoice) {
                 console.log('It is a tie')
             } else if ((humanchoice === 'rock' && computerchoice === 'scissors') ||
@@ -70,4 +57,4 @@ function playgame () {
     }
 }
 
-playgame ()
+playgame()
