@@ -1,14 +1,8 @@
-//to convert sring to number use "parseInt"
-//how to select a particular element
-
-dood = [10, 11, 12]
-console.log(dood[1])
-console.log('hello world')
-let x = Math.random()
-console.log(x)
-
-
 //THE GAME CODE
+
+const rock = document.querySelector('#rock')
+const paper = document.querySelector('#paper')
+const scissors = document.querySelector('#scissors')
 
 //scoreboard
 let humanscore = 0
