@@ -1,66 +1,62 @@
-//to convert sring to number use "parseInt"
-//how to select a particular element
-
-dood = [10, 11, 12]
-console.log(dood[1])
-console.log('hello world')
-let x = Math.random()
-console.log(x)
-
-
 //THE GAME CODE
+const p1 = document.getElementById('p-1')
+const p2 = document.getElementById('p-2')
+const win_id = document.getElementById('win-id')
+const dialog = document.getElementById('dialog')
+const rock = document.getElementById('rock')
+const paper = document.getElementById('paper')
+const scissors = document.getElementById('scissors')
 
 //scoreboard
 let humanscore = 0
 let computerscore = 0
 
-//gotta make a loop for 5 rounds and also needs to add a score board
-function playgame () {
-    for (let i = 0; i < 5; i++) {
-        let answer = prompt("Enter an answer: rock, paper or scissors: ");//input
-        const answers = ['rock', 'paper', 'scissors'];
 
-        function computerAnswer() {
-            // Generate a random index between 0 and 2
-            const randomIndex = Math.floor(Math.random() * answers.length);
-            // Return the answer at the random index
-            return answers[randomIndex];
-        }
+const answers = ['Rock', 'Paper', 'Scissors'];
 
-        const computerchoice = computerAnswer();
-        console.log(`computer anwer is ${computerchoice}`);
+function playround(humanchoice) {
 
-        function HumanAnswer() {
-            if (answer.toLowerCase() === 'rock') {
-                return 'rock'
-            } else if (answer.toLowerCase() === 'paper') {
-                return 'paper'
-            } else if (answer.toLowerCase() === 'scissors') {
-                return 'scissors'
-            }    
-        }
+    function computerAnswer() {
+        // Generate a random index between 0 and 2
+        const randomIndex = Math.floor(Math.random() * answers.length);
+        // Return the answer at the random index
+        return answers[randomIndex];
+    }
 
-        const humanchoice = HumanAnswer()
-        console.log(`human answer is ${humanchoice}`)
+    const computerchoice = computerAnswer();
+    console.log(`computer anwer is ${computerchoice}`);
 
-        function playround() {
-            if (computerchoice === humanchoice) {
-                console.log('It is a tie')
-            } else if ((humanchoice === 'rock' && computerchoice === 'scissors') ||
-            (humanchoice === 'paper' && computerchoice === 'rock') ||
-            (humanchoice === 'scissors' && computerchoice === 'paper')) {
-                humanscore += 1
-                console.log(`you win! ${humanchoice} beats ${computerchoice}`)
-                console.log(`human score is ${humanscore} and  computer score is ${computerscore}`)
-            } else {
-                computerscore += 1
-                console.log(`you lose! ${computerchoice} beats ${humanchoice}`)
-                console.log(`human score is ${humanscore} and  computer score is ${computerscore}`)
-            }
-        }
-        
-        playround()
+    const human = humanchoice
+    console.log(`human anwer is ${humanchoice}`);
+
+    if (computerchoice === humanchoice) {
+        p1.textContent = `Your choice: ${humanchoice}`
+        p2.textContent = `Computer choice: ${computerchoice}`
+        dialog.textContent = 'It is a tie'
+        win_id.textContent = `Oh try again`
+    } else if ((humanchoice === 'rock' && computerchoice === 'scissors') ||
+        (humanchoice === 'paper' && computerchoice === 'rock') ||
+        (humanchoice === 'scissors' && computerchoice === 'paper')) {
+        humanscore += 1
+        p1.textContent = `Your choice: ${humanchoice}`
+        p2.textContent = `Computer choice: ${computerchoice}`
+        dialog.textContent = `Human score is ${humanscore} and  computer score is ${computerscore}`
+        win_id.textContent = `You win! ${humanchoice} beats ${computerchoice}`
+    } else {
+        computerscore += 1
+        p1.textContent = `Your choice: ${humanchoice}`
+        p2.textContent = `Computer choice: ${computerchoice}`
+        dialog.textContent = `Human score is ${humanscore} and  computer score is ${computerscore}`
+        win_id.textContent = `You lose! ${computerchoice} beats ${humanchoice}`
     }
 }
 
-playgame()
+/* for (let i = 0; i < 5; i++) {       
+} */
+
+
+rock.addEventListener('click', () => playround('Rock'))
+paper.addEventListener('click', () => playround('Paper'))
+scissors.addEventListener('click', () => playround('Scissors'))
+
+//something
