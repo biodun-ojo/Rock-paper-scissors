@@ -1,4 +1,6 @@
 //THE GAME CODE
+const p1 = document.getElementById('p-1')
+const p2 = document.getElementById('p-2')
 const win_id = document.getElementById('win-id')
 const dialog = document.getElementById('dialog')
 const rock = document.getElementById('rock')
@@ -10,7 +12,7 @@ let humanscore = 0
 let computerscore = 0
 
 
-const answers = ['rock', 'paper', 'scissors'];
+const answers = ['Rock', 'Paper', 'Scissors'];
 
 function playround(humanchoice) {
 
@@ -28,32 +30,33 @@ function playround(humanchoice) {
     console.log(`human anwer is ${humanchoice}`);
 
     if (computerchoice === humanchoice) {
-        console.log('It is a tie')
+        p1.textContent = `Your choice: ${humanchoice}`
+        p2.textContent = `Computer choice: ${computerchoice}`
         dialog.textContent = 'It is a tie'
-        win_id.textContent = ``
+        win_id.textContent = `Oh try again`
     } else if ((humanchoice === 'rock' && computerchoice === 'scissors') ||
         (humanchoice === 'paper' && computerchoice === 'rock') ||
         (humanchoice === 'scissors' && computerchoice === 'paper')) {
         humanscore += 1
-        console.log(`you win! ${humanchoice} beats ${computerchoice}`)
-        console.log(`human score is ${humanscore} and  computer score is ${computerscore}`)
-        dialog.textContent = `human score is ${humanscore} and  computer score is ${computerscore}`
-        win_id.textContent = `you win! ${humanchoice} beats ${computerchoice}`
+        p1.textContent = `Your choice: ${humanchoice}`
+        p2.textContent = `Computer choice: ${computerchoice}`
+        dialog.textContent = `Human score is ${humanscore} and  computer score is ${computerscore}`
+        win_id.textContent = `You win! ${humanchoice} beats ${computerchoice}`
     } else {
         computerscore += 1
-        console.log(`you lose! ${computerchoice} beats ${humanchoice}`)
-        console.log(`human score is ${humanscore} and  computer score is ${computerscore}`)
-        dialog.textContent = `human score is ${humanscore} and  computer score is ${computerscore}`
-        win_id.textContent = `you lose! ${computerchoice} beats ${humanchoice}`
+        p1.textContent = `Your choice: ${humanchoice}`
+        p2.textContent = `Computer choice: ${computerchoice}`
+        dialog.textContent = `Human score is ${humanscore} and  computer score is ${computerscore}`
+        win_id.textContent = `You lose! ${computerchoice} beats ${humanchoice}`
     }
 }
-for (let i = 0; i < 5; i++) {
-    
-}
+
+/* for (let i = 0; i < 5; i++) {       
+} */
 
 
-rock.addEventListener('click', () => playround('rock'))
-paper.addEventListener('click', () => playround('paper'))
-scissors.addEventListener('click', () => playround('scissors'))
+rock.addEventListener('click', () => playround('Rock'))
+paper.addEventListener('click', () => playround('Paper'))
+scissors.addEventListener('click', () => playround('Scissors'))
 
 //something
