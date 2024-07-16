@@ -1,0 +1,19 @@
+body{
+    background-color: #2b124c;
+    color: white;
+    font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+}
+
+.dialog {
+    padding-top: 50px;
+}
+
+.options{
+    padding-top: 100px;
+}
+
+button {
+    border-radius: 10px;
+    background-color: #854f6c;
+    border: 0;
+}
