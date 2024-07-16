@@ -34,9 +34,9 @@ function playround(humanchoice) {
         p2.textContent = `Computer choice: ${computerchoice}`
         dialog.textContent = 'It is a tie'
         win_id.textContent = `Oh try again`
-    } else if ((humanchoice === 'rock' && computerchoice === 'scissors') ||
-        (humanchoice === 'paper' && computerchoice === 'rock') ||
-        (humanchoice === 'scissors' && computerchoice === 'paper')) {
+    } else if ((humanchoice === 'Rock' && computerchoice === 'Scissors') ||
+        (humanchoice === 'Paper' && computerchoice === 'Rock') ||
+        (humanchoice === 'Scissors' && computerchoice === 'Paper')) {
         humanscore += 1
         p1.textContent = `Your choice: ${humanchoice}`
         p2.textContent = `Computer choice: ${computerchoice}`
