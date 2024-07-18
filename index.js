@@ -24,10 +24,8 @@ function playround(humanchoice) {
     }
 
     const computerchoice = computerAnswer();
-    console.log(`computer anwer is ${computerchoice}`);
 
     const human = humanchoice
-    console.log(`human anwer is ${humanchoice}`);
 
     if (computerchoice === humanchoice) {
         p1.textContent = `Your choice: ${humanchoice}`
