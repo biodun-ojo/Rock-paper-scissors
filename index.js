@@ -6,6 +6,7 @@ const dialog = document.getElementById('dialog')
 const rock = document.getElementById('rock')
 const paper = document.getElementById('paper')
 const scissors = document.getElementById('scissors')
+const fresh = document.getElementById('fresh')
 
 //scoreboard
 let humanscore = 0
@@ -58,3 +59,9 @@ paper.addEventListener('click', () => playround('Paper'))
 scissors.addEventListener('click', () => playround('Scissors'))
 
 //something
+
+function refreshPage() {
+    location.reload();
+}
+
+fresh.addEventListener('click', () => refreshPage())
